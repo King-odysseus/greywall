@@ -5,11 +5,13 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/App.css";
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      <Navbar className="nav-custom" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
