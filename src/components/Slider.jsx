@@ -1,31 +1,51 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Slider.css";
 
 const Slider = () => {
-  //Array of images for the slider
+  // Array of images for the slider
   const images = [
-    { src: "https://fakeimg.pl/600x400", alt: "Placeholder 1" },
-    { src: "https://fakeimg.pl/600x400", alt: "Placeholder 2" },
-    { src: "https://fakeimg.pl/600x400", alt: "Placeholder 3" },
+    {
+      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%201",
+      alt: "Placeholder 1",
+    },
+    {
+      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%202",
+      alt: "Placeholder 2",
+    },
+    {
+      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%203",
+      alt: "Placeholder 3",
+    },
   ];
 
-  //   State is used for tracking the current index of the image being displayed
-  const [currentIndex, setCurrentIncdex] = useState(0);
+  // State for tracking the current index of the image
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // To move to the next image in the array, we use a function that increments the index and resets it to 0 if it exceeds the length of the array.
+  // Function to move to the next image
   const nextImage = () => {
-    setCurrentIncdex(function (prevIndex) {
-      var nextIndex = prevIndex + 1; //move to the next image
-      if (nextIndex >= images.length) {
-        return 0; //reset to the first image if it exceeds the length of the array
-      }
-      return nextIndex; //return the next index
-    });
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  // Closing the Slider component
+  // Function to move to the previous image
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(nextImage, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  return (
+    <div className="slider">
+      <button onClick={prevImage}>⬅️ Prev</button>
+      <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
+      <button onClick={nextImage}>Next ➡️</button>
+    </div>
+  );
 };
 
 export default Slider;
