@@ -5,15 +5,15 @@ const Slider = () => {
   // Array of images for the slider
   const images = [
     {
-      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%201",
+      src: "https://placeholder.pics/svg/1280x720/A0FFD0/Image%201",
       alt: "Placeholder 1",
     },
     {
-      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%202",
+      src: "https://placeholder.pics/svg/1280x720/FFE0AA/Image%202",
       alt: "Placeholder 2",
     },
     {
-      src: "https://placeholder.pics/svg/1280x720/DEDEDE/555555/Image%203",
+      src: "https://placeholder.pics/svg/1280x720/7FC7FF/Image%203",
       alt: "Placeholder 3",
     },
   ];
@@ -41,9 +41,13 @@ const Slider = () => {
 
   return (
     <div className="slider">
-      <button onClick={prevImage}>⬅️ Prev</button>
+      <button className="button1" onClick={prevImage}>
+        Prev
+      </button>
       <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-      <button onClick={nextImage}>Next ➡️</button>
+      <button className="button2" onClick={nextImage}>
+        Next
+      </button>
     </div>
   );
 };

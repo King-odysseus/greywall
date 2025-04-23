@@ -17,7 +17,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <div>
+            <div className="page-container">
               <Home />
               <Slider /> {/* ✅ Add Slider inside the Home route */}
             </div>
