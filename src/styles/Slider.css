@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.prev-btn {
+  position: absolute;
+
+  left: 0;
+
+  background-color: #ffffff12;
+  border-radius: 30%;
+  padding: 10px 20px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.next-btn {
+  position: absolute;
+
+  right: 10px;
+
+  background-color: #ffffff00;
+  border-radius: 10%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.slider-container {
+  padding-top: 80px;
+  margin: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

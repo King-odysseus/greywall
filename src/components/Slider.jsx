@@ -40,12 +40,17 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="slider">
-      <button className="button1" onClick={prevImage}>
+    <div className="slider-container">
+      <img
+        className="slider-img"
+        src={images[currentIndex].src}
+        alt={images[currentIndex].alt}
+      />
+      <button className="prev-btn" onClick={prevImage}>
         Prev
       </button>
-      <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-      <button className="button2" onClick={nextImage}>
+
+      <button className="next-btn" onClick={nextImage}>
         Next
       </button>
     </div>
