@@ -35,7 +35,7 @@ const Slider = () => {
 
   // Auto-slide functionality
   useEffect(() => {
-    const interval = setInterval(nextImage, 3000); // Change image every 3 seconds
+    const interval = setInterval(nextImage, 4000); // Change image every 3 seconds
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 

@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
 import Slider from "./components/Slider";
+import Partners from "./components/Partners"; // Import the OurPartners component
 
 const App = () => {
   return (
@@ -17,9 +18,10 @@ const App = () => {
         <Route
           path="/"
           element={
-            <div className="container">
+            <div className="page-container">
               <Home />
               <Slider /> {/* Add Slider inside the Home route */}
+              <Partners /> {/* Add OurPartners component */}
             </div>
           }
         />
